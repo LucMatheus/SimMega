@@ -9,6 +9,9 @@
 $ultimoSorteio = 2200;
 $valorDoProximoPremio = 2000000.00;
 
+$valorDaUltimaMega = 100000000.00;
+$ganhadores = 4;
+
 //Conversão em string - NÃO MEXA!
 $valorDoProximoPremio = strval($valorDoProximoPremio);
 str_replace(".", ",", $valorDoProximoPremio);
@@ -57,7 +60,7 @@ str_replace(".", ",", $valorDoProximoPremio);
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="javascript:mostrarJanela('#janela-ultimoGanhador')">
 						<img src="media/ico_jackpot.svg" alt="Útlimo Ganhador">
 						<p>Ver o último Ganhador</p>
 					</a>
@@ -90,12 +93,20 @@ str_replace(".", ",", $valorDoProximoPremio);
 				<a href="javascript:void(0)" class="text-primary" onclick="sortearNúmerosAleatórios()">Advinhe os meus números</a>
 			</form>
 		</div>
+		<div id="janela-ultimoGanhador">
+			<h1>Dados do Último Jogo</h1>
+			<p>Concurso : <b><?=$ultimoSorteio;?></b></p>
+			<p>Números sorteados : <b>03 - 35 - 38 - 40 - 57 - 58</b></p>
+			<p>Valor : <b><?=$valorDaUltimaMega;?></b></p>
+			<p>Ganhadores : <b><?=$ganhadores;?></b></p>
+			<button class="btn btn-primary" onclick="retornarParaOMenuPrincipal()">Voltar pro Menu Principal</button>
+		</div>
 	</section>
 	<footer>
 		&copy; 2020 - Estúdio Do Luk <br/>
 		Made by: Teclucas98 <br/>
 		Email : <a href="mailto:teclucas.costa@hotmail.com">teclucas.costa@hotmail.com</a><br/>
-		Ver 0.1
+		Ver 0.1.1
 	</footer>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
